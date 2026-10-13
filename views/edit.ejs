@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Post</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Edit Your Post</h1>
+        <p>Make your changes below.</p>
+    </header>
+
+    <main>
+
+        <section class="edit-post">
+
+            <form action="/edit/<%= post.id %>" method="POST">
+
+                <label for="title">Post Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value="<%= post.title %>"
+                    required
+                >
+
+                <label for="blog">Blog Post</label>
+                <textarea
+                    id="blog"
+                    name="blog"
+                    rows="8"
+                    required
+                ><%= post.blog %></textarea>
+
+                <div class="form-buttons">
+
+                    <button type="submit">
+                        Save Changes
+                    </button>
+
+                    <a href="/" class="cancel-button">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
