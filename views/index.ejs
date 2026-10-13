@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Blog</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>My Blog</h1>
+        <p>A place to share whatever is on your mind.</p>
+    </header>
+
+    <main>
+
+        <section class="new-post">
+            <h2>Create a Post</h2>
+
+            <form action="/add-post" method="POST">
+            
+                <label for="title">Post Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Give your post a title"
+                    required
+                >
+                <label for="blog">Blog Post</label>
+                <textarea
+                    id="blog"
+                    name="blog"
+                    rows="7"
+                    placeholder="Write something..."
+                    required
+                ></textarea>
+                
+                <button type="submit">Post</button>
+            </form>
+        </section>
+
+
+        <section class="posts">
+            <h2>Recent Posts</h2>
+
+            <% if (posts.length === 0) { %>
+            
+                <p class="empty-message">
+                    No post yet. Create the first one!
+                </p>
+
+            <% } else { %>
+                
+                <% posts.forEach((post) => { %>
+                
+                    <article class="post">
+
+                        <h3><%= post.title %></h3>
+
+                        <p class="post-info">
+                            By <%= post.name %> • <%= post.date %>
+                        </p>
+
+                        <p class="post-content">
+                            <%= post.blog %>
+                        </p>
+
+                        <% if (currentUser && currentUser.user_id === post.creator_user_id) { %>
+                            
+                            <div class="post-buttons">
+
+                                <a href="/edit/<%= post.id %>" class="edit-button">
+                                    Edit
+                                </a>
+
+                                <form action="/delete/<%= post.id %>" method="POST">
+                                    <button type="submit" class="delete-button">
+                                        Delete
+                                    </button>
+                                </form>
+
+                            </div>
+                        
+                        <% } %>
+                    </article>
+              <% }); %>
+           <% } %>
+        </section>
+
+    </main>
+
+</body>
+</html>
