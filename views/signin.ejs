@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sign In</h1>
+        <p>Sign in to create, edit, and delete your blog posts.</p>
+    </header>
+
+    <main class="account-page">
+
+        <section class="account-form">
+            <h2>Welcome Back</h2>
+
+            <% if (error) { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+
+            <form action="/signin" method="POST">
+
+                <label for="user_id">User ID</label>
+                <input
+                    type="text"
+                    id="user_id"
+                    name="user_id"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                >
+
+                <button type="submit">Sign In</button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+                <a href="/signup">Sign up</a>
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>
