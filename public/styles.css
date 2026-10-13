@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f3ec;
+    color: #2f2f2f;
+}
+
+header {
+    border-bottom: 2px solid #4f6b57;
+    padding: 28px 8%;
+    background-color: #fffdf8;
+}
+
+header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 6px;
+    color: #666;
+}
+
+main {
+    width: 85%;
+    max-width: 1100px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.new-post,
+.edit-post {
+    background-color: #fffdf8;
+    border: 1px solid #d8d1c6;
+    padding: 22px;
+}
+
+.posts {
+    background-color: #fffdf8;
+    border: 1px solid #d8d1c6;
+    padding: 25px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 14px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #4f6b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #3f5747;
+}
+
+.new-post button {
+    background-color: #3f5f49;
+    color: white;
+}
+
+.new-post button:hover {
+    background-color: #304a38;
+}
+
+.new-post button:active {
+    background-color: #243a2b;
+    transform: translateY(2px);
+}
+
+.post {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd4c8;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.post-info {
+    font-size: 13px;
+    color: #777;
+}
+
+.post-buttons form {
+    display: inline;
+}
+
+.edit-button,
+.cancel-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #2f2f2f;
+    border: 1px solid #777;
+    padding: 8px 14px;
+}
+
+.delete-button {
+    background-color: #9b4a42;
+    margin-top: 0;
+}
+
+.delete-button:hover {
+    background-color: #7d3833;
+}
+
+.delete-button:active {
+    background-color: #642c28;
+    transform: translateY(2px);
+}
+
+.empty-message {
+    color: #777;
+    font-style: italic;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.form-buttons button {
+    margin-top: 0;
+}
+
+.account-page {
+    display:block;
+    max-width: 500px;
+}
+
+.account-form {
+    background-color: #fffdf8;
+    border: 1px solid #d8d1c6;
+    padding: 25px;
+}
+
+.account-form a {
+    color: #3f5f49;
+}
+
+.error-message {
+    color: #9b4a42;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.post-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 750px) {
+    main {
+        width: 92%;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 22px 4%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+}
